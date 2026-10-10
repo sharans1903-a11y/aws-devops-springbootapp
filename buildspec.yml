@@ -5,9 +5,9 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - aws --version
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 596986371547.dkr.ecr.us-east-1.amazonaws.com
-      - REPOSITORY_URI=596986371547.dkr.ecr.us-east-1.amazonaws.com/myshilp
-      - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 330741054588.dkr.ecr.us-east-1.amazonaws.com
+      - REPOSITORY_URI=330741054588.dkr.ecr.us-east-1.amazonaws.com/shilp4192
+      - IMAGE_TAG=build-$(echo$CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
 
   build:
     commands:
@@ -32,5 +32,4 @@ phases:
 
 artifacts:
   files:
-    - imagedefinitions.jso
-  
+    - imagedefinitions.json
